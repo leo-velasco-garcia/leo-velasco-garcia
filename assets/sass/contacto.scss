@@ -1,0 +1,108 @@
+//
+@import "./partials/reset";
+@import "./partials/vars";
+@import "./partials/mixins";
+@import "./partials/header";
+@import "./partials/discos";
+@import "./partials/masInfo";
+@import "./partials/menuMov";
+@import "./partials/cv";
+@import "./partials/home";
+
+* {
+    // border: 1px solid green;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-optical-sizing: auto;
+    line-height: 1.25rem;
+    font-weight: 300;
+
+    .material-symbols-outlined {
+        font-variation-settings:
+            'FILL' 0,
+            'wght' 200,
+            'GRAD' 0,
+            'opsz' 48
+    }
+
+    @include esconder-scrollbar;
+}
+
+.home {
+    height: 100vh;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 0rem;
+
+    .header {
+        left: 1.5rem;
+    }
+}
+
+.material-symbols-outlined {
+    font-weight: 200;
+}
+
+.contenedor {
+    position: fixed;
+    height: calc(100vh - 4.3rem);
+    top: 4.6rem;
+    left: 0;
+    width: 100vw;
+    background-image: url(/assets/img/Fotografías\ de\ arquitectura_1.JPG);
+    background-size: cover;
+
+    .contact {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 38%;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        background-color: white;
+        padding: 1rem 1.5rem 1rem 1rem;
+        border-radius: 5px;
+        gap: 0.2rem;
+        -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.10);
+        -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.10);
+        box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.10);
+
+        // gap: 1rem;  
+        // height: calc(100vh - 6.6rem);
+        // width: fit-content;
+        // border: 1px solid red;
+        li {
+            display: grid;
+            grid-template-columns: 2rem 1fr;
+            gap: 1rem;
+
+            a {
+                display: flex;
+                align-items: center;
+                width: fit-content;
+
+                img {
+                    width: 2rem;
+                    @include animation;
+                    opacity: 60%;
+
+                    &:hover {
+                        transform: scale(105%);
+                        color: black;
+                        opacity: 100%;
+                    }
+                }
+
+                span {
+                    @include animation;
+                    color: $gris80;
+
+                    &:hover {
+                        color: black;
+                    }
+                }
+            }
+        }
+    }
+
+}
