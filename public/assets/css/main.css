@@ -1,3 +1,4 @@
+@charset "UTF-8";
 *:where(:not(html, iframe, canvas, img, svg, video):not(svg *, symbol *)) {
   all: unset;
   display: revert;
@@ -370,6 +371,138 @@ meter {
   transform: translateY(150vh);
 }
 
+* {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-optical-sizing: auto;
+  line-height: 1.25rem;
+  font-weight: 300;
+  -ms-overflow-style: none;
+  /* Internet Explorer 10+ */
+  scrollbar-width: none;
+  /* Firefox */
+}
+* .material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 200, "GRAD" 0, "opsz" 48;
+}
+*::-webkit-scrollbar {
+  display: none;
+  /* Safari and Chrome */
+}
+
+.home {
+  padding: 1.5rem;
+  height: 100vh;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 0rem;
+}
+
+.material-symbols-outlined {
+  font-weight: 200;
+}
+
+.disco .card .movil {
+  display: none;
+}
+
+.cv {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 4.4rem;
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  grid-template-rows: 14rem 1fr;
+  gap: 2rem;
+  height: calc(100vh - 6.6rem);
+  width: calc(100vw - 3rem);
+  max-width: 60rem;
+  overflow-y: scroll;
+}
+.cv .partes {
+  display: flex;
+  flex-flow: column nowrap;
+}
+.cv .principal {
+  grid-area: 1/2/-1/-1;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  overflow-y: scroll;
+  flex-flow: column;
+  gap: 1rem;
+}
+.cv .principal h2 {
+  font-size: 1.44rem;
+  line-height: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.cv .principal article {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-flow: column nowrap;
+}
+.cv .principal article .titulo {
+  font-weight: 500;
+}
+.cv .secundario {
+  grid-area: 2/1/-1/2;
+  display: flex;
+  flex-flow: column nowrap;
+  height: 100%;
+  overflow-y: scroll;
+}
+.cv .secundario .sectex {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1rem;
+  text-align: right;
+}
+.cv .secundario .sectex article {
+  display: flex;
+  flex-flow: column nowrap;
+}
+.cv .secundario .sectex article h4 {
+  font-weight: 600;
+}
+.cv figure {
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+.cv figure img {
+  max-width: 14rem;
+  object-fit: contain;
+  border-radius: 3px;
+}
+
+@media screen and (max-width: 750px) {
+  .cv {
+    display: flex;
+    flex-flow: column nowrap;
+    overflow-y: scroll;
+  }
+  .cv figure {
+    justify-content: center;
+  }
+  .cv .principal {
+    height: fit-content;
+    overflow-y: visible;
+  }
+  .cv .secundario {
+    overflow-y: visible;
+  }
+  .cv .secundario .sectex {
+    text-align: start;
+  }
+  .cv .secundario .sectex h4 {
+    font-size: 1.44rem;
+    line-height: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+}
 .home {
   padding: 0;
   height: 100vh;
@@ -391,7 +524,7 @@ meter {
   height: calc(100vh - 4.3rem);
   top: 4.6rem;
   width: 100vw;
-  background-image: url("assets/img/Fotografias de arquitectura_1.jpg");
+  background-image: url(/assets/img/Fotografías\ de\ arquitectura_1.JPG);
   background-size: cover;
 }
 .contenedor .contact {
@@ -527,160 +660,4 @@ meter {
 
 .dch-enter-to {
   transform: translateX(0);
-}
-
-* {
-  font-family: "IBM Plex Sans", sans-serif;
-  font-optical-sizing: auto;
-  line-height: 1.25rem;
-  font-weight: 300;
-  -ms-overflow-style: none;
-  /* Internet Explorer 10+ */
-  scrollbar-width: none;
-  /* Firefox */
-}
-* .material-symbols-outlined {
-  font-variation-settings: "FILL" 0, "wght" 200, "GRAD" 0, "opsz" 48;
-}
-*::-webkit-scrollbar {
-  display: none;
-  /* Safari and Chrome */
-}
-
-.home {
-  padding: 1.5rem;
-  height: 100vh;
-  display: flex;
-  flex-flow: column nowrap;
-  gap: 0rem;
-}
-
-.material-symbols-outlined {
-  font-weight: 200;
-}
-
-.disco .card .movil {
-  display: none;
-}
-
-.cv {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 4.4rem;
-  display: grid;
-  grid-template-columns: 2fr 3fr;
-  grid-template-rows: 14rem 1fr;
-  gap: 2rem;
-  height: calc(100vh - 6.6rem);
-  width: calc(100vw - 3rem);
-  max-width: 60rem;
-  overflow-y: scroll;
-}
-.cv .partes {
-  display: flex;
-  flex-flow: column nowrap;
-}
-.cv .principal {
-  grid-area: 1/2/-1/-1;
-  height: 100%;
-  width: 100%;
-  display: flex;
-  overflow-y: scroll;
-  flex-flow: column;
-  gap: 1rem;
-}
-.cv .principal h2 {
-  font-size: 1.44rem;
-  line-height: 1.5rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-}
-.cv .principal article {
-  margin-bottom: 1rem;
-  display: flex;
-  flex-flow: column nowrap;
-}
-.cv .principal article .titulo {
-  font-weight: 500;
-}
-.cv .secundario {
-  grid-area: 2/1/-1/2;
-  display: flex;
-  flex-flow: column nowrap;
-  height: 100%;
-  overflow-y: scroll;
-}
-.cv .secundario .sectex {
-  display: flex;
-  flex-flow: column nowrap;
-  gap: 1rem;
-  text-align: right;
-}
-.cv .secundario .sectex article {
-  display: flex;
-  flex-flow: column nowrap;
-}
-.cv .secundario .sectex article h4 {
-  font-weight: 600;
-}
-.cv figure {
-  height: 100%;
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
-}
-.cv figure img {
-  max-width: 14rem;
-  object-fit: contain;
-  border-radius: 3px;
-}
-
-@media screen and (max-width: 750px) {
-  .cv {
-    display: flex;
-    flex-flow: column nowrap;
-    overflow-y: scroll;
-  }
-  .cv figure {
-    justify-content: center;
-  }
-  .cv .principal {
-    height: fit-content;
-    overflow-y: visible;
-  }
-  .cv .secundario {
-    overflow-y: visible;
-  }
-  .cv .secundario .sectex {
-    text-align: start;
-  }
-  .cv .secundario .sectex h4 {
-    font-size: 1.44rem;
-    line-height: 1.5rem;
-    margin-bottom: 0.5rem;
-  }
-}
-.izq-leave {
-  transform: translateX(0);
-}
-
-.izq-leave-active {
-  transition: transform 1000ms ease-in-out;
-}
-
-.izq-leave-to {
-  transform: translateX(-150vw);
-}
-
-.izq-enter {
-  transform: translateX(150vw);
-}
-
-.izq-enter-active {
-  transition: transform 1000ms ease-in-out;
-}
-
-.izq-enter-to {
-  transform: translateX(0);
-}/*# sourceMappingURL=cv.css.map */pingURL=cv.css.map */
+}/*# sourceMappingURL=main.css.map */

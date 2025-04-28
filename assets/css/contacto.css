@@ -1,4 +1,3 @@
-@charset "UTF-8";
 *:where(:not(html, iframe, canvas, img, svg, video):not(svg *, symbol *)) {
   all: unset;
   display: revert;
@@ -632,7 +631,7 @@ meter {
   top: 4.6rem;
   left: 0;
   width: 100vw;
-  background-image: url(/assets/img/Fotografías\ de\ arquitectura_1.JPG);
+  background-image: url("assets/img/Fotografias de arquitectura_1.jpg");
   background-size: cover;
 }
 .contenedor .contact {
@@ -677,4 +676,4 @@ meter {
 }
 .contenedor .contact li a span:hover {
   color: black;
-}/*# sourceMappingURL=contacto.css.map */
+}/*# sourceMappingURL=contacto.css.map */L=contacto.css.map */
