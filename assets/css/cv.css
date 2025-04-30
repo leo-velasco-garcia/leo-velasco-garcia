@@ -1,0 +1,686 @@
+*:where(:not(html, iframe, canvas, img, svg, video):not(svg *, symbol *)) {
+  all: unset;
+  display: revert;
+}
+
+/* Preferred box-sizing value */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Reapply the pointer cursor for anchor tags */
+a, button {
+  cursor: revert;
+}
+
+/* Remove list styles (bullets/numbers) */
+ol, ul, menu {
+  list-style: none;
+}
+
+/* For images to not be able to exceed their container */
+img {
+  max-width: 100%;
+}
+
+/* removes spacing between cells in tables */
+table {
+  border-collapse: collapse;
+}
+
+/* revert the 'white-space' property for textarea elements on Safari */
+textarea {
+  white-space: revert;
+}
+
+/* minimum style to allow to style meter element */
+meter {
+  -webkit-appearance: revert;
+  appearance: revert;
+}
+
+/* reset default text opacity of input placeholder */
+::placeholder {
+  color: unset;
+}
+
+/* fix the feature of 'hidden' attribute.
+ display:revert; revert to element instead of attribute */
+:where([hidden]) {
+  display: none;
+}
+
+/* revert for bug in Chromium browsers
+ - fix for the content editable attribute will work properly. */
+:where([contenteditable]) {
+  -moz-user-modify: read-write;
+  -webkit-user-modify: read-write;
+  overflow-wrap: break-word;
+  -webkit-line-break: after-white-space;
+}
+
+/* apply back the draggable feature - exist only in Chromium and Safari */
+:where([draggable=true]) {
+  -webkit-user-drag: element;
+}
+
+.home .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  position: fixed;
+  top: 0;
+  height: fit-content;
+  padding: 1.5rem 0 1.2rem 0;
+  z-index: 999;
+  background-color: white;
+  width: calc(100vw - 3rem);
+}
+.home .header h1 {
+  font-size: 1.728rem;
+  font-weight: 400;
+  transition: 300ms ease-in-out;
+  color: #666666;
+  font-weight: 500;
+}
+.home .header h1:hover {
+  color: black;
+}
+.home .header .nav {
+  display: flex;
+  align-items: flex-end;
+  flex-flow: nowrap;
+  gap: 1.5rem;
+}
+.home .header .nav .navElem {
+  font-size: 1.2rem;
+  color: #666666;
+  margin: 0;
+  transition: 300ms ease-in-out;
+  padding-bottom: 0.3rem;
+}
+@media screen and (max-width: 750px) {
+  .home .header .nav .navElem {
+    display: none;
+  }
+}
+.home .header .nav .navElem:hover {
+  color: black;
+}
+.home .header .nav .selected {
+  color: black;
+  border-bottom: 1px solid #666666;
+  font-weight: 400;
+}
+.home .header .nav .abrirMenu {
+  display: none;
+}
+@media screen and (max-width: 750px) {
+  .home .header .nav .abrirMenu {
+    display: block;
+  }
+}
+
+.color {
+  background-color: red;
+}
+
+.home .discos {
+  width: 100%;
+  height: calc(100vh - 6.6rem);
+  position: fixed;
+  top: 4.4rem;
+  width: calc(100vw - 3rem);
+  overflow-y: scroll;
+}
+.home .discos .discosul {
+  width: 100%;
+  height: fit-content;
+  max-height: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  gap: 1rem;
+  overflow-y: scroll;
+}
+
+.card {
+  position: relative;
+  max-width: 45vw;
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 0rem;
+  gap: 0rem;
+  height: fit-content;
+}
+@media screen and (max-width: 750px) {
+  .card {
+    max-width: 100vw;
+  }
+  .card .enlace {
+    justify-content: center;
+  }
+  .card .enlace .nombre {
+    width: 100%;
+    text-align: center;
+  }
+}
+.card .enlace {
+  margin: 0;
+  padding: 0;
+  height: fit-content;
+  width: fit-content;
+  flex-flow: column nowrap;
+  display: flex;
+  position: relative;
+}
+.card .enlace:hover img {
+  transition: 500ms ease-in-out;
+}
+@media screen and (min-width: 750px) {
+  .card .enlace:hover img {
+    filter: brightness(80%);
+  }
+}
+.card .enlace:hover .nombre {
+  transition: 500ms ease-in-out;
+  opacity: 100%;
+}
+.card .enlace img {
+  aspect-ratio: 1;
+  border-radius: 5px;
+  object-fit: cover;
+}
+.card .enlace .nombre {
+  font-weight: 400;
+  margin-top: 0.5rem;
+  color: black;
+}
+@media screen and (min-width: 750px) {
+  .card .enlace .nombre {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    text-shadow: 0 0 0.5rem black;
+    opacity: 0%;
+    color: white;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .home .discos .discosul .disco .card {
+    max-width: 100vw;
+  }
+}
+@media screen and (max-width: 530px) {
+  .home .discos .discosul {
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  }
+}
+.masinfo {
+  position: fixed;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 2rem;
+  background-color: #fff;
+  width: 100vw;
+  height: 100vh;
+  padding: 2rem;
+  transform: translatex(150vw);
+  transition: transform ease-in-out 500ms;
+  z-index: 9999;
+}
+.masinfo .figmasInfo {
+  height: 100%;
+  width: 100%;
+  overflow-y: scroll;
+  display: flex;
+  flex-flow: column nowrap;
+}
+.masinfo .figmasInfo img {
+  width: 100%;
+}
+.masinfo .masInfoTxt {
+  display: flex;
+  justify-content: center;
+  flex-flow: column nowrap;
+  gap: 1rem;
+  position: relative;
+  height: fit-content;
+  width: 100%;
+  height: 100%;
+}
+.masinfo .masInfoTxt .nombreProyecto {
+  font-size: 2.488rem;
+  line-height: 2.5rem;
+  font-weight: 500;
+}
+.masinfo .masInfoTxt .subt {
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 0.5rem;
+}
+.masinfo .masInfoTxt .subt p a {
+  font-weight: 500;
+  color: #666666;
+  transition: 300ms ease-in-out;
+}
+.masinfo .masInfoTxt .subt p a:hover {
+  color: black;
+}
+.masinfo .masInfoTxt .subt .subtitulo {
+  font-weight: 400;
+}
+.masinfo .masInfoTxt .subt .subtitulo a {
+  font-weight: 600;
+  color: #666666;
+  transition: 300ms ease-in-out;
+}
+.masinfo .masInfoTxt .subt .subtitulo a:hover {
+  color: black;
+}
+.masinfo .masInfoTxt .subt .tags {
+  display: flex;
+  flex-flow: row;
+  justify-content: flex-end;
+  width: 100%;
+  gap: 0.5rem;
+}
+.masinfo .masInfoTxt .subt .tags .tag {
+  font-size: 0.8rem;
+  color: #666666;
+}
+.masinfo .cerrar {
+  position: absolute;
+  top: 0rem;
+  right: 0rem;
+  z-index: 999;
+}
+.masinfo .cerrar:hover {
+  transform: scale(1.1);
+  transition: 300ms ease-in-out;
+}
+
+.deuno .figmasInfo {
+  justify-content: center;
+}
+.deuno .figmasInfo img {
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.masInfoVisto {
+  transform: translatex(0);
+  opacity: 100;
+}
+
+@media screen and (max-width: 530px) {
+  .masinfo {
+    flex-flow: column nowrap;
+    grid-template-columns: 100%;
+  }
+}
+.fondo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background-color: rgba(255, 0, 0, 0);
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition-duration: 500ms;
+}
+.fondo .nav {
+  background-color: white;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  padding: 1rem;
+  gap: 1rem;
+}
+.fondo .nav .navElem {
+  font-size: 1.2rem;
+  margin: 0;
+}
+.fondo .nav .selected {
+  color: black;
+  font-weight: 500;
+}
+.fondo .nav .cerrarNavMov {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+}
+
+.abajo {
+  transform: translateY(150vh);
+}
+
+.home {
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 0rem;
+}
+.home .header {
+  left: 1.5rem;
+}
+
+.material-symbols-outlined {
+  font-weight: 200;
+}
+
+.contenedor {
+  position: fixed;
+  left: 0;
+  height: calc(100vh - 4.3rem);
+  top: 4.6rem;
+  width: 100vw;
+  background-image: url("/leo-velasco-garcia.github.io/assets/img/Fotografias de arquitectura_1.jpg");
+  background-size: cover;
+}
+.contenedor .contact {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 38%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  background-color: white;
+  padding: 1rem 1.5rem 1rem 1rem;
+  border-radius: 5px;
+  gap: 0.2rem;
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.1);
+}
+.contenedor .contact li {
+  display: grid;
+  grid-template-columns: 2rem 1fr;
+  gap: 1rem;
+}
+.contenedor .contact li a {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+}
+.contenedor .contact li a img {
+  width: 2rem;
+  transition: 300ms ease-in-out;
+  opacity: 60%;
+}
+.contenedor .contact li a img:hover {
+  transform: scale(105%);
+  color: black;
+  opacity: 100%;
+}
+.contenedor .contact li a span {
+  transition: 300ms ease-in-out;
+  color: #666666;
+}
+.contenedor .contact li a span:hover {
+  color: black;
+}
+
+* {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-optical-sizing: auto;
+  line-height: 1.25rem;
+  font-weight: 300;
+  box-sizing: border-box;
+  -ms-overflow-style: none;
+  /* Internet Explorer 10+ */
+  scrollbar-width: none;
+  /* Firefox */
+}
+* .material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 200, "GRAD" 0, "opsz" 48;
+}
+*::-webkit-scrollbar {
+  display: none;
+  /* Safari and Chrome */
+}
+
+.home {
+  padding: 1.5rem;
+  height: 100vh;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 0rem;
+}
+
+.material-symbols-outlined {
+  font-weight: 200;
+}
+
+.cargando-once {
+  opacity: 0;
+}
+
+.cargando-once-active {
+  transition: opacity 1000ms ease-in-out;
+}
+
+.cargando-once-to {
+  opacity: 1;
+}
+
+.izq-leave {
+  transform: translateX(0);
+}
+
+.izq-leave-active {
+  transition: transform 500ms ease-in-out;
+}
+
+.izq-leave-to {
+  transform: translateX(-150vw);
+}
+
+.izq-enter {
+  transform: translateX(150vw);
+}
+
+.izq-enter-active {
+  transition: transform 500ms ease-in-out;
+}
+
+.izq-enter-to {
+  transform: translateX(0);
+}
+
+.dch-leave {
+  transform: translateX(0);
+}
+
+.dch-leave-active {
+  transition: transform 500ms ease-in-out;
+}
+
+.dch-leave-to {
+  transform: translateX(150vw);
+}
+
+.dch-enter {
+  transform: translateX(-150vw);
+}
+
+.dch-enter-active {
+  transition: transform 500ms ease-in-out;
+}
+
+.dch-enter-to {
+  transform: translateX(0);
+}
+
+* {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-optical-sizing: auto;
+  line-height: 1.25rem;
+  font-weight: 300;
+  -ms-overflow-style: none;
+  /* Internet Explorer 10+ */
+  scrollbar-width: none;
+  /* Firefox */
+}
+* .material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 200, "GRAD" 0, "opsz" 48;
+}
+*::-webkit-scrollbar {
+  display: none;
+  /* Safari and Chrome */
+}
+
+.home {
+  padding: 1.5rem;
+  height: 100vh;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 0rem;
+}
+
+.material-symbols-outlined {
+  font-weight: 200;
+}
+
+.disco .card .movil {
+  display: none;
+}
+
+.cv {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 4.4rem;
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  grid-template-rows: 14rem 1fr;
+  gap: 2rem;
+  height: calc(100vh - 6.6rem);
+  width: calc(100vw - 3rem);
+  max-width: 60rem;
+  overflow-y: scroll;
+}
+.cv .partes {
+  display: flex;
+  flex-flow: column nowrap;
+}
+.cv .principal {
+  grid-area: 1/2/-1/-1;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  overflow-y: scroll;
+  flex-flow: column;
+  gap: 1rem;
+}
+.cv .principal h2 {
+  font-size: 1.44rem;
+  line-height: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.cv .principal article {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-flow: column nowrap;
+}
+.cv .principal article .titulo {
+  font-weight: 500;
+}
+.cv .secundario {
+  grid-area: 2/1/-1/2;
+  display: flex;
+  flex-flow: column nowrap;
+  height: 100%;
+  overflow-y: scroll;
+}
+.cv .secundario .sectex {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1rem;
+  text-align: right;
+}
+.cv .secundario .sectex article {
+  display: flex;
+  flex-flow: column nowrap;
+}
+.cv .secundario .sectex article h4 {
+  font-weight: 600;
+}
+.cv figure {
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+.cv figure img {
+  max-width: 14rem;
+  object-fit: contain;
+  border-radius: 3px;
+}
+
+@media screen and (max-width: 750px) {
+  .cv {
+    display: flex;
+    flex-flow: column nowrap;
+    overflow-y: scroll;
+  }
+  .cv figure {
+    justify-content: center;
+  }
+  .cv .principal {
+    height: fit-content;
+    overflow-y: visible;
+  }
+  .cv .secundario {
+    overflow-y: visible;
+  }
+  .cv .secundario .sectex {
+    text-align: start;
+  }
+  .cv .secundario .sectex h4 {
+    font-size: 1.44rem;
+    line-height: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+}
+.izq-leave {
+  transform: translateX(0);
+}
+
+.izq-leave-active {
+  transition: transform 1000ms ease-in-out;
+}
+
+.izq-leave-to {
+  transform: translateX(-150vw);
+}
+
+.izq-enter {
+  transform: translateX(150vw);
+}
+
+.izq-enter-active {
+  transition: transform 1000ms ease-in-out;
+}
+
+.izq-enter-to {
+  transform: translateX(0);
+}/*# sourceMappingURL=cv.css.map */

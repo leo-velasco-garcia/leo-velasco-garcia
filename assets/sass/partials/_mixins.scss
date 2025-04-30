@@ -1,0 +1,58 @@
+@mixin line-clamp {
+    // Esta es la solución que he encontrado para evitar que el texto tenga más de una línea, 
+    // porque la solución que más ofrece la gente es 
+    //          text-overflow: ellipsis; 
+    //          overflow: visible; 
+    //          white-space: nowrap;
+    // y esto solo funciona si el contenedor tiene un ancho definido. En este caso no lo tiene 
+    // pq la idea es que sea un grid responsive. 
+    // 
+    // En el post de stack overflow en el que lo he encontrado hay una respuesta de 2021 que dice que no tiene
+    // buena compatibilidad con navegadores y otra de 2024 que dice que parece estar solucionado ya
+    // https://stackoverflow.com/a/64928574
+    // 
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+@mixin esconder-scrollbar {
+    -ms-overflow-style: none;
+    /* Internet Explorer 10+ */
+    scrollbar-width: none;
+
+    /* Firefox */
+    &::-webkit-scrollbar {
+        display: none;
+        /* Safari and Chrome */
+    }
+}
+
+@mixin h1 {
+    font-size: 2.488rem;
+    line-height: 2.5rem;
+    font-weight: 500;
+}
+@mixin h2 {
+    font-size: 2.074rem;
+    font-weight: 400;
+}
+@mixin h3 {
+    font-size: 1.728rem;
+    font-weight: 400;
+}
+@mixin h4 {
+    font-size: 1.44rem;
+    line-height: 1.5rem;
+}
+@mixin h5 {
+    font-size: 1.2rem;
+}
+@mixin sp {
+    font-size: 0.8rem;
+}
+
+@mixin animation{
+    transition: 300ms ease-in-out;
+}

@@ -1,0 +1,50 @@
+.fondo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: rgba(255, 0, 0, 0);
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition-duration: 500ms;
+    // transition-delay: 200ms;
+    // border: 1px solid red;
+
+    .nav {
+        background-color: white;
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: 100%;
+        padding: 1rem;
+        // border-radius: 5px;
+        gap: 1rem;
+        // border: 1px solid red;
+
+        .navElem {
+            @include h5;
+            margin: 0;
+        }
+
+        .selected {
+            color: black;
+            font-weight: 500;
+        }
+
+        .cerrarNavMov{
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+        }
+    }
+}
+
+.abajo{
+    transform: translateY(150vh);
+    // display: none;
+}
