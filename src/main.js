@@ -262,7 +262,7 @@ const addEvents = () => {
                 <li class="trabajo" id="${elem.id}">
                     <div class="card">
                         <a class="enlace" href="">
-                            <img src="assets/img/${elem.nombrest}_1.jpg" alt="${elem.nombre}" class="imgproy">
+                            <img src="/leo-velasco-garcia.github.io/assets/img/${elem.nombrest}_1.jpg" alt="${elem.nombre}" class="imgproy">
                             <span class="nombre">${elem.nombre}</span>
                         </a>
                     </div>
@@ -387,7 +387,7 @@ const addEvents = () => {
             if (e.startsWith("<div")) {
                 rutas += e;
             } else {
-                rutas += `<img src="assets/img/${e}" alt="Imagen del proyecto ${elem.nombre}" class="imgmasinfo">`
+                rutas += `<img src="/leo-velasco-garcia.github.io/assets/img/${e}" alt="Imagen del proyecto ${elem.nombre}" class="imgmasinfo">`
             }
         })
         if (imgs.length == 1) {
