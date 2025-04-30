@@ -1,0 +1,63 @@
+.home .header {
+    display: flex;
+    justify-content: space-between;
+    align-items:end;
+    position: fixed;
+    top: 0;
+    height: fit-content;
+    padding: 1.5rem 0 1.2rem 0;
+    z-index: 999;
+    background-color: white;
+    width: calc(100vw - 3rem);
+
+    h1 {
+        @include h3;
+        @include animation;
+        color: $gris80;
+        font-weight: 500;
+
+        &:hover {
+            color: black;
+        }
+    }
+
+    .nav {
+        display: flex;
+        align-items: flex-end;
+        flex-flow: nowrap;
+        gap: 1.5rem;
+
+        .navElem {
+            @include h5;
+            color: $gris80;
+            margin: 0;
+            @include animation;
+            
+            padding-bottom: 0.3rem;
+            @media screen and (max-width: 750px) {
+                display: none;
+            }
+
+            &:hover {
+                color: black;
+            }
+        }
+
+        .selected{
+            color: black;
+            border-bottom: 1px solid $gris80;
+            font-weight: 400;
+        }
+
+        .abrirMenu{
+            display: none;
+            @media screen and (max-width: 750px) {
+                display: block;
+            }
+        }
+    }
+}
+
+.color {
+    background-color: red;
+}

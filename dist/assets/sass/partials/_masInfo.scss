@@ -1,0 +1,151 @@
+.masinfo {
+    position: fixed;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    border: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 2rem;
+    background-color: #fff;
+    width: 100vw;
+    height: 100vh;
+    padding: 2rem;
+    // opacity: 0%;
+    transform: translatex(150vw);
+    transition: transform ease-in-out 500ms;
+    z-index: 9999;
+    // border: 1px solid blue;
+
+    .figmasInfo {
+        // border-radius: 10px;
+        // border: 1px solid red;
+        height: 100%;
+        width: 100%;
+        overflow-y: scroll;
+        display: flex;
+        flex-flow: column nowrap;
+        // border: 1px solid red;
+        // gap: 1rem;
+
+        img {
+
+            width: 100%;
+
+        }
+    }
+
+    .masInfoTxt {
+        display: flex;
+        justify-content: center;
+        flex-flow: column nowrap;
+        gap: 1rem;
+        position: relative;
+        height: fit-content;
+        width: 100%;
+        height: 100%;
+
+        .nombreProyecto {
+            @include h1;
+        }
+
+        .subt {
+            width: 100%;
+            // border: 1px solid red;
+            display: flex;
+            flex-flow: column nowrap;
+            gap: 0.5rem;
+
+            p a {
+                font-weight: 500;
+                color: $gris80;
+                @include animation;
+
+                &:hover {
+                    color: black;
+                }
+            }
+
+            .subtitulo {
+                font-weight: 400;
+
+                a {
+                    font-weight: 600;
+                    color: $gris80;
+                    @include animation;
+
+                    &:hover {
+                        color: black;
+                    }
+                }
+            }
+
+            .tags {
+                display: flex;
+                flex-flow: row;
+                justify-content: flex-end;
+                width: 100%;
+                gap: 0.5rem;
+
+                .tag {
+                    @include sp;
+                    color: $gris80;
+                }
+
+                // .taglink {
+                //     @include animation;
+
+                //     &:hover {
+                //         color: black;
+                //     }
+                // }
+            }
+        }
+    }
+
+    .cerrar {
+        position: absolute;
+        top: 0rem;
+        right: 0rem;
+        z-index: 999;
+
+        &:hover {
+            transform: scale(1.1);
+            @include animation;
+        }
+
+        ;
+        // color: white;
+        // text-shadow: 0 0 0.5rem black;
+        // span{
+        //     font-size: 1rem;
+        // }
+    }
+}
+
+.deuno {
+    .figmasInfo {
+        justify-content: center;
+
+        img {
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+    }
+}
+
+.masInfoVisto {
+    transform: translatex(0);
+    opacity: 100;
+}
+
+@media screen and (max-width: 530px) {
+    .masinfo {
+        flex-flow: column nowrap;
+        grid-template-columns: 100%;
+    }
+
+}
