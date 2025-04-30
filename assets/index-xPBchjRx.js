@@ -19,7 +19,7 @@ Además de los identificadores visuales, se desarrolla un sistema gráfico que d
                 <li class="trabajo" id="${h.id}">
                     <div class="card">
                         <a class="enlace" href="">
-                            <img src="/leo-velasco-garcia.github.io/assets/img/${h.nombrest}_1.jpg" alt="${h.nombre}" class="imgproy">
+                            <img src="/assets/img/${h.nombrest}_1.jpg" alt="${h.nombre}" class="imgproy">
                             <span class="nombre">${h.nombre}</span>
                         </a>
                     </div>

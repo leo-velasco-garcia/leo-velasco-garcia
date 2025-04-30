@@ -391,7 +391,7 @@ meter {
   height: calc(100vh - 4.3rem);
   top: 4.6rem;
   width: 100vw;
-  background-image: url("/leo-velasco-garcia.github.io/assets/img/Fotografias de arquitectura_1.jpg");
+  background-image: url("/assets/img/Fotografias de arquitectura_1.jpg");
   background-size: cover;
 }
 .contenedor .contact {
@@ -683,4 +683,4 @@ meter {
 
 .izq-enter-to {
   transform: translateX(0);
-}/*# sourceMappingURL=cv.css.map */
+}/*# sourceMappingURL=cv.css.map */ourceMappingURL=cv.css.map */
