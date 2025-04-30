@@ -1,0 +1,108 @@
+.home .discos {
+    width: 100%;
+    height: calc(100vh - 6.6rem);
+    position: fixed;
+    top: 4.4rem;
+    width: calc(100vw - 3rem);
+    overflow-y: scroll;
+    // background-color: aquamarine;
+
+    .discosul {
+        width: 100%;
+        height: fit-content;
+        max-height: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+        gap: 1rem;
+        overflow-y: scroll;
+    }
+}
+
+
+// .home .discos .trabajo {
+//     display: flex;
+//     width: fit-content;
+//     padding: 0;
+// }
+
+.card {
+    position: relative;
+    max-width: 45vw;
+    display: flex;
+    flex-flow: column nowrap;
+    padding: 0rem;
+    gap: 0rem;
+    height: fit-content;
+    @media screen and (max-width: 750px) {
+        max-width: 100vw;
+        .enlace{
+            justify-content: center;
+            // border: 1px solid red;
+            .nombre{
+                width: 100%;
+                text-align: center;
+            }
+        }
+    }
+
+    .enlace {
+        margin: 0;
+        padding: 0;
+        height: fit-content;
+        width: fit-content;
+        flex-flow: column nowrap;
+        display: flex;
+        position: relative;
+
+
+        &:hover {
+            img{
+                transition: 500ms ease-in-out;
+                @media screen and (min-width: 750px) {
+                    filter: brightness(80%);
+                }
+            }
+            .nombre{
+                transition: 500ms ease-in-out;
+                opacity: 100%;
+            }
+        }
+
+        img {
+            aspect-ratio: 1;
+            border-radius: 5px;
+            object-fit: cover;
+        }
+
+        .nombre {
+            font-weight: 400;
+            margin-top: 0.5rem;
+            color: black;
+
+            @media screen and (min-width: 750px) {
+                position: absolute;
+                bottom: 1rem;
+                left: 1rem;
+                text-shadow: 0 0 0.5rem black;
+                opacity: 0%;
+                color: white;
+                // opacity: 100%;
+                // text-shadow: 10px 8px #ccf, -10px 12px #fcf, -8px -12px #cfc, 12px -5px #fc9;
+            }
+        }
+    }
+}
+
+
+
+@media screen and (max-width: 750px) {
+    .home .discos .discosul .disco .card {
+        max-width: 100vw;
+    }
+}
+
+@media screen and (max-width: 530px) {
+    .home .discos .discosul {
+        grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr))
+    }
+}
