@@ -14,7 +14,7 @@
         rel="stylesheet">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <script defer type="module" src="/assets/index-DFHuOT0F.js"></script>
+    <script defer type="module" src="/src/main.js"></script>
 </head>
 
 <body data-barba="wrapper" >
@@ -30,7 +30,7 @@
                 <a href="/contacto.html" class="navElem">
                     Contacto
                 </a>
-                <a href="javascript:;" class="cerrar" onclick="cerrarNavMov()">
+                <a href="javascript:;" class="cerrar" onclick="cerrarNavMovB()">
                     <span id="op" class="material-symbols-rounded">close</span>
                 </a>
             </nav>
@@ -49,7 +49,9 @@
                 <a href="/contacto.html" class="navElem">
                     Contacto
                 </a>
-                <span class="material-symbols-rounded" class="navElem" onclick="abrirNavMov()">menu</span>
+                <a href="javascript:;" class="abrirMenu" id="op" onclick="abrirNavMovB()">
+                    <span class="material-symbols-rounded">menu</span>
+                </a>
             </nav>
         </header>
         <div class="content cv" id="cv">
