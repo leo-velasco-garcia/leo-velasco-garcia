@@ -3,12 +3,12 @@ Además de los identificadores visuales, se desarrolla un sistema gráfico que d
             <li class="trabajo" id="${r.id}">
                 <div class="card">
                     <a class="enlace" href="">
-                        <img src="/leo-velasco-garcia.github.io/assets/img/${r.nombrest}_1.jpg" alt="${r.nombre}" class="imgproy">
+                        <img src="/assets/img/${r.nombrest}_1.jpg" alt="${r.nombre}" class="imgproy">
                         <span class="nombre">${r.nombre}</span>
                     </a>
                 </div>
             </li>
-        `}),o.innerHTML=e},b=()=>{let o=document.querySelector("#seccion"),e,r=document.querySelector("#masinfo"),s;o.addEventListener("click",a=>{a.preventDefault(),a.target.className=="trabajo"?(e=a.target.id,s=l.find(i=>i.id==e)):a.target.className!="trabajo"&&(a.target.className=="card"||a.target.className=="enlace"||a.target.className=="imgproy"||a.target.className=="nombre")&&(e=a.target.closest(".trabajo").id,s=l.find(i=>i.id==e)),f(s),r.classList.add("masInfoVisto"),y()})},f=o=>{let e=document.querySelector("#masinfo"),r="",s=o.tags,a="",i=o.imgs,t="";s.forEach((n,d)=>{d==0?a+=`<span class="tag">${n}</span>`:(a+='<span class="tag">·</span>',a+=`<span class="tag">${n}</span>`)}),i.forEach(n=>{n.startsWith("<div")?t+=n:t+=`<img src="/leo-velasco-garcia.github.io/assets/img/${n}" alt="Imagen del proyecto ${o.nombre}" class="imgmasinfo">`}),i.length==1?e.classList.add("deuno"):e.classList.remove("deuno"),r+=`
+        `}),o.innerHTML=e},b=()=>{let o=document.querySelector("#seccion"),e,r=document.querySelector("#masinfo"),s;o.addEventListener("click",a=>{a.preventDefault(),a.target.className=="trabajo"?(e=a.target.id,s=l.find(i=>i.id==e)):a.target.className!="trabajo"&&(a.target.className=="card"||a.target.className=="enlace"||a.target.className=="imgproy"||a.target.className=="nombre")&&(e=a.target.closest(".trabajo").id,s=l.find(i=>i.id==e)),f(s),r.classList.add("masInfoVisto"),y()})},f=o=>{let e=document.querySelector("#masinfo"),r="",s=o.tags,a="",i=o.imgs,t="";s.forEach((n,d)=>{d==0?a+=`<span class="tag">${n}</span>`:(a+='<span class="tag">·</span>',a+=`<span class="tag">${n}</span>`)}),i.forEach(n=>{n.startsWith("<div")?t+=n:t+=`<img src="/assets/img/${n}" alt="Imagen del proyecto ${o.nombre}" class="imgmasinfo">`}),i.length==1?e.classList.add("deuno"):e.classList.remove("deuno"),r+=`
         <figure class="figmasInfo">
             ${t}
         </figure>
