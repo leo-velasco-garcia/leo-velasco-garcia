@@ -3,24 +3,24 @@ Además de los identificadores visuales, se desarrolla un sistema gráfico que d
             <li class="trabajo" id="${r.id}">
                 <div class="card">
                     <a class="enlace" href="">
-                        <img src="/assets/img/${r.nombrest}_1.jpg" alt="${r.nombre}" class="imgproy">
+                        <img src="/leo-velasco-garcia.github.io/assets/img/${r.nombrest}_1.jpg" alt="${r.nombre}" class="imgproy">
                         <span class="nombre">${r.nombre}</span>
                     </a>
                 </div>
             </li>
-        `}),o.innerHTML=e},b=()=>{let o=document.querySelector("#seccion"),e,r=document.querySelector("#masinfo"),s;o.addEventListener("click",a=>{a.preventDefault(),a.target.className=="trabajo"?(e=a.target.id,s=l.find(i=>i.id==e)):a.target.className!="trabajo"&&(a.target.className=="card"||a.target.className=="enlace"||a.target.className=="imgproy"||a.target.className=="nombre")&&(e=a.target.closest(".trabajo").id,s=l.find(i=>i.id==e)),f(s),r.classList.add("masInfoVisto"),y()})},f=o=>{let e=document.querySelector("#masinfo"),r="",s=o.tags,a="",i=o.imgs,t="";s.forEach((n,d)=>{d==0?a+=`<span class="tag">${n}</span>`:(a+='<span class="tag">·</span>',a+=`<span class="tag">${n}</span>`)}),i.forEach(n=>{n.startsWith("<div")?t+=n:t+=`<img src="/assets/img/${n}" alt="Imagen del proyecto ${o.nombre}" class="imgmasinfo">`}),i.length==1?e.classList.add("deuno"):e.classList.remove("deuno"),r+=`
+        `}),o.innerHTML=e},b=()=>{let o=document.querySelector("#seccion"),e,r=document.querySelector("#masinfo"),s;o.addEventListener("click",a=>{a.preventDefault(),a.target.className=="trabajo"?(e=a.target.id,s=l.find(i=>i.id==e)):a.target.className!="trabajo"&&(a.target.className=="card"||a.target.className=="enlace"||a.target.className=="imgproy"||a.target.className=="nombre")&&(e=a.target.closest(".trabajo").id,s=l.find(i=>i.id==e)),f(s),r.classList.add("masInfoVisto"),y()})},f=o=>{let e=document.querySelector("#masinfo"),r="",s=o.tags,a="",i=o.imgs,t="";s.forEach((n,d)=>{d==0?a+=`<span class="tag">${n}</span>`:(a+='<span class="tag">·</span>',a+=`<span class="tag">${n}</span>`)}),i.forEach(n=>{n.startsWith("<div")?t+=n:t+=`<img src="/leo-velasco-garcia.github.io/assets/img/${n}" alt="Imagen del proyecto ${o.nombre}" class="imgmasinfo">`}),i.length==1?e.classList.add("deuno"):e.classList.remove("deuno"),r+=`
         <figure class="figmasInfo">
             ${t}
         </figure>
-        <div class="masInfoTxt">
-            <a href="javascript:;" class="cerrar" id="cerrarmasinfo"><span class="material-symbols-rounded">close</span></a>
-            <h2 class="nombreProyecto">${o.nombre}</h2>
-            <div class="subt">
-                <span class="subtitulo">${o.subtitulo}</span>
-                <p>${o.descripcion}</p>
-                <div class="tags">
-                    ${a}
+            <div class="masInfoTxt">
+                <a href="javascript:;" class="cerrar" id="cerrarmasinfo"><span class="material-symbols-rounded">close</span></a>
+                <h2 class="nombreProyecto">${o.nombre}</h2>
+                <div class="subt">
+                    <span class="subtitulo">${o.subtitulo}</span>
+                    <p>${o.descripcion}</p>
+                    <div class="tags">
+                        ${a}
+                    </div>
                 </div>
             </div>
-        </div>
         `,e.innerHTML=r},v=()=>{window.addEventListener("click",o=>{let e,r;o.target.className=="estrellaDisco material-symbols-rounded"&&(e=o.target.closest(".discoSeleccionable").id,r=l.find(s=>s.id==e),r.fav=!r.fav,listaDeFav=l.filter(s=>s.fav==!0),pintarDiscosFav(listaDeFav),c())})};c();b();v();linksdelNav();function y(){let o=document.querySelector("#cerrarmasinfo"),e=document.querySelector("#masinfo");o.addEventListener("click",r=>{r.preventDefault(),e.classList.remove("masInfoVisto")})}

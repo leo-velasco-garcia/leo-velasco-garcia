@@ -84,7 +84,7 @@
 
             .tags {
                 display: flex;
-                flex-flow: row;
+                flex-flow: row wrap;
                 justify-content: flex-end;
                 width: 100%;
                 gap: 0.5rem;
@@ -142,10 +142,32 @@
     opacity: 100;
 }
 
-@media screen and (max-width: 530px) {
+@media screen and (max-width: 900px) {
     .masinfo {
         flex-flow: column nowrap;
         grid-template-columns: 100%;
+
+        .masInfoTxt{
+            max-height: 16rem;
+            justify-content: start;
+            overflow-y: scroll;
+            // background-color: red;
+            .tags{
+                // width: 100%;
+                display: flex;
+                // flex-flow: column;
+                // border: 1px solid red;
+                .tag{
+                    white-space: nowrap;
+                    line-height: 0.6rem;
+                    // display: flex;
+                }
+            }
+        }
+
+        .figmasInfo{
+            height: 100%;
+        }
     }
 
 }
