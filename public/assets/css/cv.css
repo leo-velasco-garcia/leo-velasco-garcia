@@ -289,7 +289,7 @@ meter {
 }
 .masinfo .masInfoTxt .subt .tags {
   display: flex;
-  flex-flow: row;
+  flex-flow: row wrap;
   justify-content: flex-end;
   width: 100%;
   gap: 0.5rem;
@@ -322,10 +322,25 @@ meter {
   opacity: 100;
 }
 
-@media screen and (max-width: 530px) {
+@media screen and (max-width: 900px) {
   .masinfo {
     flex-flow: column nowrap;
     grid-template-columns: 100%;
+  }
+  .masinfo .masInfoTxt {
+    max-height: 16rem;
+    justify-content: start;
+    overflow-y: scroll;
+  }
+  .masinfo .masInfoTxt .tags {
+    display: flex;
+  }
+  .masinfo .masInfoTxt .tags .tag {
+    white-space: nowrap;
+    line-height: 0.6rem;
+  }
+  .masinfo .figmasInfo {
+    height: 100%;
   }
 }
 .fondo {
